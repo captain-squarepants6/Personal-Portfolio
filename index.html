@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/660d2d5322.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu"> 
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Backend Devoloper</p>
+                <h1>Hi, I'm <span>Akash</span><br>Reddy from India</h1>
+            </div>
+        </div>
+    </div>
+
+<!-- ---------about---------- -->
+    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-2">
+                    <h1 class="subtitle">About me</h1>
+                    <p>I am Akash Reddy from Goa,India. I am a student programmer currently persuing B-Tech CSE at SRM institute of Technology.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web development</span><br>Back end programing</li>
+                            <li><span>App development</span><br>Android app</li>
+                            <li><span>UI?UX</span><br>Design</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Nodejs</span><br>Created backend plugins for whatsapp bot</li>
+                            <li><span>React-Native</span><br>Created multiple Apps</li>
+                            <li><span>Rest-Api</span><br>Created Rest-Api</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>High School</span><br>Completed at NCS Goa</li>
+                            <li><span>College</span><br>Persuing CSE at SRM institute of Science and technology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------portfolio--------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="subtitle">My Work</h1>
+            <div class="work-list">
+               <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Nodejs</h2>
+                    <p>A simple telegram userbot. It has features for downloading and saving any media and some group and self management features.</p>
+                    <a href="https://github.com/captain-squarepants6/Darkbot">Learn more</a>
+               </div> 
+               <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Nodejs</h2>
+                    <p>A whatsapp-telegram bridge bot which can send any message from telegram to whatsapp. It also has some special features in whatsapp end which are, you can connect your google classroom account and recive messages and documents, you can also connect your drive to the bot so that you can upload to your drive using whastapp.</p>
+                    <a href="https://github.com/captain-squarepants6/Social-Transfer">Learn more</a>
+               </div> 
+               <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Nodejs</h2>
+                    <p>A simple api for <a class = "alink" href = "https://github.com/xinntao/ESRGAN">ESRGAN</a>.</p>
+                    <a href="https://github.com/captain-squarepants6/ESRGAN_API">Learn more</a>
+               </div> 
+            </div>
+            <a href="https://github.com/captain-squarepants6" class="btn">See more</a>
+        </div>
+    </div>
+    <!-- ----------contact---------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>akash2004.reddy@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>9579538958</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/captain-squarepants6"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/_akxsh__/"><i class="fa-brands fa-instagram"></i></a>
+                        
+                        
+                        
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="Email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Mesage"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Made with <i class="fa-solid fa-heart"></i> by Akash Reddy</p>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName('tab-links')
+        var tabcontents = document.getElementsByClassName('tab-contents')
+        function opentab(name){
+            for(i of tablinks){
+                i.classList.remove("active-link")
+            }
+            for(i of tabcontents){
+                i.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(name).classList.add("active-tab")
+        }
+
+
+        var sidemenu = document.getElementById("sidemenu")
+        function openmenu(){
+            sidemenu.style.right = "0"
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px"
+        }
+    </script>
+ 
+      
+        
+      </script>
+      
+</body>
+</html>
