@@ -80,7 +80,7 @@
                <div>
                     <i class="fa-solid fa-code"></i>
                     <h2>Python</h2>
-                    <p>This is an virtual assistant just like siri which can be used for any purpose.</p>
+                    <p>This is an virtual assistant just like siri which can be used for any purpose.</p>class
                     <a href="https://github.com/captain-squarepants6/Virtual-Assistant">Learn more</a>
                </div> 
                <div>
@@ -150,6 +150,17 @@
  
       
         
+      </script>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxH3LRIaD3cS-02dItT4ZpzBdXcDGpaHlR20JrKwIgVKBgYU7RrZoFp_Gluto-x_uVt/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
       </script>
       
 </body>
